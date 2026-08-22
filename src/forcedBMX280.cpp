@@ -239,9 +239,11 @@ int32_t ForcedBMX280::getTemperatureCelsius(const bool performMeasurement) {
 #ifdef FORCED_BMX280_ATTINY
 ForcedBMX280Float::ForcedBMX280Float(USI_TWI& bus, const uint8_t address)
   :
+  ForcedBMX280(bus, address),
 #else
 ForcedBMX280Float::ForcedBMX280Float(TwoWire& bus, const uint8_t address)
   :
+  ForcedBMX280(bus, address),
 #endif
     _bus(bus),
     _address(address) {
@@ -271,9 +273,11 @@ float ForcedBMX280Float::getTemperatureCelsiusAsFloat(const bool performMeasurem
 #ifdef FORCED_BMX280_ATTINY
 ForcedBMP280::ForcedBMP280(USI_TWI& bus, const uint8_t address)
   :
+  ForcedBMX280(bus, address),
 #else
 ForcedBMP280::ForcedBMP280(TwoWire& bus, const uint8_t address)
   :
+  ForcedBMX280(bus, address),
 #endif
     _bus(bus),
     _address(address) {
@@ -356,9 +360,11 @@ uint32_t ForcedBMP280::getPressure(const bool performMeasurement) {
 #ifdef FORCED_BMX280_ATTINY
 ForcedBMP280Float::ForcedBMP280Float(USI_TWI& bus, const uint8_t address)
 :
+  ForcedBMP280(bus, address),
 #else
 ForcedBMP280Float::ForcedBMP280Float(TwoWire& bus, const uint8_t address)
 :
+  ForcedBMP280(bus, address),
 #endif
     _bus(bus),
     _address(address) {
@@ -395,9 +401,11 @@ float ForcedBMP280Float::getPressureAsFloat(const bool performMeasurement) {
 #ifdef FORCED_BMX280_ATTINY
 ForcedBME280::ForcedBME280(USI_TWI& bus, const uint8_t address)
 :
+  ForcedBMP280(bus, address),
 #else
 ForcedBME280::ForcedBME280(TwoWire& bus, const uint8_t address)
 :
+  ForcedBMP280(bus, address),
 #endif
     _bus(bus),
     _address(address) {
@@ -512,9 +520,11 @@ uint32_t ForcedBME280::getRelativeHumidity(const bool performMeasurement) {
 #ifdef FORCED_BMX280_ATTINY
 ForcedBME280Float::ForcedBME280Float(USI_TWI& bus, const uint8_t address)
 :
+  ForcedBME280(bus, address),
 #else
 ForcedBME280Float::ForcedBME280Float(TwoWire& bus, const uint8_t address)
 :
+  ForcedBME280(bus, address),
 #endif
     _bus(bus),
     _address(address) {
